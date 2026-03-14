@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | Fernando Carvalho</title>
+    <style>
+        /* Reset básico e tipografia */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Helvetica', Arial, sans-serif;
+            color: #333;
+            display: flex;
+            flex-direction: row; /* Layout padrão desktop */
+        }
+
+        /* Sidebar Fixa (Desktop) */
+        aside {
+            width: 280px;
+            height: 100vh;
+            position: fixed;
+            padding: 60px 40px;
+            background: #fff;
+            border-right: 1px solid #f0f0f0;
+            z-index: 10;
+        }
+        .brand {
+            width: 280px;
+        }
+        .brand h1 {
+            font-size: 24.5px;
+            line-height: 1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        .brand h4 { font-size: 14px; font-weight: normal; color: #666; }
+
+        nav h3 {
+            font-size: 14px;
+            text-transform: uppercase;
+            margin: 60px 0 20px 0;
+            color: #000;
+        }
+
+        nav ul { list-style: none; }
+        nav li { margin-bottom: 12px; }
+        nav a {
+            text-decoration: none;
+            color: #888;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+        nav a:hover, nav a.active { color: #000; }
+
+        .contact-link { margin-top: 80px; display: block; text-decoration: none; color: #888; }
+
+        /* Conteúdo Principal */
+        main {
+            margin-left: 280px; /* Compensa a sidebar fixa */
+            padding: 60px;
+            width: 100%;
+        }
+
+        header h2 {
+            font-size: 42px;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #999;
+            font-size: 16px;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Grid de Imagens */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            /* Faz com que os itens menores preencham buracos deixados pelos maiores */
+            grid-auto-flow: dense;
+        }
+
+        .grid-item {
+            width: 100%;
+            /* aspect-ratio: 16 / 10; */
+            background: #f9f9f9;
+            /* overflow: hidden; */
+            cursor: pointer;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+            /* display: grid;   */
+        }
+
+        .grid-item:hover img { transform: scale(1.05); }
+
+        .full-width {
+            grid-column: span 3;
+            margin-top: 15px;
+            aspect-ratio: auto;
+        }
+
+        .half-width {
+            grid-column: span 2;
+            
+            /* Ajustamos a proporção para não esticar demais verticalmente */
+    /* aspect-ratio: 2 / 1; */
+        }
+
+        .one-width {
+            grid-column: span 1;
+            
+            /* margin-top: 15px; */
+            /* aspect-ratio: auto; */
+        }
+        /* Lightbox / Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(255, 255, 255, 0.98);
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+        }
+
+        .modal-content {
+            max-width: 95%;
+            max-height: 90vh;
+            object-fit: contain;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+
+        .close-btn {
+            position: absolute;
+            top: 20px; right: 30px;
+            font-size: 40px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        /* --- ADAPTAÇÃO MOBILE --- */
+        @media (max-width: 900px) {
+            body { flex-direction: column; }
+
+            aside {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 40px 20px;
+                text-align: center;
+                border-right: none;
+                border-bottom: 1px solid #f0f0f0;
+            }
+
+            nav h3 { margin: 30px 0 15px 0; }
+            .contact-link { margin-top: 30px; }
+
+            main {
+                margin-left: 0; /* Remove o recuo da sidebar */
+                padding: 40px 20px;
+            }
+
+            header h2 { font-size: 28px; letter-spacing: 2px; }
+            
+            .grid {
+                grid-template-columns: 1fr; /* Uma imagem por linha no mobile */
+                gap: 20px;
+            }
+
+            .full-width {
+                grid-column: span 1;
+                margin-top: 0;
+            }
+
+            .modal-content {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <aside>
+        <div class="brand">
+            <h1>Minas Update</h1>
+            <h4>By Fernando Carvalho Santana</h4>
+        </div>
+        <br/>
+        <nav>
+            <h3>Trabalhos:</h3>
+            <ul>
+                <li><a href="#" class="active">Sites / Design de Sistemas</a></li>
+                <!-- <li><a href="#">Fotografias de Eventos</a></li>
+                <li><a href="#">Campus Party BSB 2025</a></li>
+                <li><a href="#">Campanha IG</a></li> -->
+            </ul>
+            <a href="#" class="contact-link">Contato</a>
+        </nav>
+    </aside>
+
+    <main>
+        <header>
+            <h2>Sites / Logos / Design</h2>
+            <p class="subtitle">Sites pela agência experimental massan-z e agência de publicidade melt.</p>
+        </header>
+
+        <section class="grid">
+            <div class="grid-item clickable-img">
+                <img src="img/sites/site-amp.jpg" alt="Projeto 1">
+            </div>
+            <div class="grid-item clickable-img">
+                <img src="img/sites/landingpage-de-app.jpg" alt="Projeto 2">
+            </div>
+            <div class="grid-item clickable-img">
+                <img src="img/sites/banner-site-pura.png" alt="Projeto 3">
+            </div>
+            
+            <div class="grid-item full-width clickable-img">
+                <img src="img/sites/banner-site-newtonpaiva.jpg" alt="Destaque">
+            </div>
+            
+            <div class="grid-item clickable-img">
+                <img src="img/sites/blog-aic.png" alt="Projeto 3">
+            </div>
+            
+            <div class="grid-item full-width clickable-img">
+                <img src="img/sites/blog-aic.png" alt="Projeto 3">
+            </div>
+            
+            <div class="grid-item clickable-img">
+                <img src="img/sites/blog-aic.png" alt="Projeto 3">
+            </div>
+            
+            <div class="grid-item clickable-img">
+                <img src="img/sites/blog-aic.png" alt="Projeto 3">
+            </div>
+            <div class="grid-item half-width clickable-img">
+                <img src="img/sites/blog-aic.png" alt="Projeto 3">
+            </div>
+            
+            <div class="grid-item clickable-img">
+                <img src="img/sites/blog-aic.png" alt="Projeto 3">
+
+            </div>
+            
+            
+            <div class="grid-item clickable-img">
+                <img src="img/sites/blog-aic.png" alt="Projeto 3">
+            </div>
+        </section>
+    </main>
+
+    <div id="imageModal" class="modal">
+        <span class="close-btn">&times;</span>
+        <img class="modal-content" id="imgFull">
+    </div>
+
+    <script>
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("imgFull");
+
+        // Abrir modal
+        document.querySelectorAll('.clickable-img').forEach(item => {
+            item.addEventListener('click', function() {
+                const fullSrc = this.querySelector('img').src;
+                modal.style.display = "flex";
+                modalImg.src = fullSrc;
+                document.body.style.overflow = "hidden"; // Trava o scroll do fundo
+            });
+        });
+
+        // Fechar ao clicar em qualquer lugar
+        modal.onclick = function() {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto"; // Libera o scroll
+        }
+    </script>
+</body>
+</html>
