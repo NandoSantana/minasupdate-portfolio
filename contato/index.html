@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio | Fernando Carvalho Santana</title>
+    <title>Contato | Fernando Carvalho Santana</title>
     <style>
         /* Reset básico e tipografia */
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -208,118 +208,32 @@
         <nav>
             <h3>Trabalhos:</h3>
             <ul>
-                <li><a href="./" class="active">Sites / Design </a></li>
-                <li><a href="ux-sistemas" class="active">UX / Sistemas</a></li>
+                <li><a href="../" class="active">Sites / Design </a></li>
+                <li><a href="../ux-sistemas" class="active">UX / Sistemas</a></li>
 
                 <!-- <li><a href="#">Fotografias de Eventos</a></li>
                 <li><a href="#">Campus Party BSB 2025</a></li>
                 <li><a href="#">Campanha IG</a></li> -->
             </ul>
-            <a href="./contato" class="contact-link">Contato</a>
+            <a href="/contato" class="contact-link">Contato</a>
         </nav>
     </aside>
 
     <main>
         <header>
-            <h2>Sites / Design</h2>
-            <p class="subtitle">Sites pela agência experimental massan-z e agência de publicidade melt.</p>
+            <h2>Contato</h2>
+            <p class="subtitle">
+                <a target="_blank" href="https://wa.me/5531984460454">Whatsapp: (31) 98446-0454</a>
+                <br/>
+                <br/>
+                <a href="mailto:fernando@minasupdate.com.br">E-mail: fernando@minasupdate.com.br</a>
+                <br/>
+                <br/>
+                <a href="https://www.linkedin.com/in/fernando-carvalho-santana/" target="_blank">LinkedIn</a>
+            </p>
         </header>
 
-        <section class="grid">
-            <div class="grid-item clickable-img">
-                <img src="img/sites/site-amp.jpg" alt="Projeto 1">
-            </div>
-            <div class="grid-item clickable-img">
-                <img src="img/sites/landingpage-de-app.jpg" alt="Projeto 2">
-            </div>
-            <div class="grid-item clickable-img">
-                <img src="img/sites/banner-site-pura.png" alt="Projeto 3">
-            </div>
-            
-            <div class="grid-item full-width clickable-img">
-                <img src="img/sites/banner-site-newtonpaiva.jpg" alt="Destaque">
-            </div>
-            
-            <div class="grid-item clickable-img">
-                <img src="img/sites/blog-aic.png" alt="Projeto 3">
-            </div>
-            
-            <div class="grid-item half-width clickable-img">
-                <img src="img/sites/joli-at-jolie.png" alt="Projeto 3">
-            </div>
-            
-            <div class="grid-item clickable-img">
-                <img src="img/sites/palestra-outubro-digital.jpg" alt="Projeto 3">
-            </div>
-            
-            <div class="grid-item clickable-img">
-                <img src="img/sites/primeiro-portfolio.jpg" alt="Projeto 3">
-            </div>
-            <div class="grid-item half-width clickable-img">
-                <img src="img/sites/sanis.png" alt="Projeto 3">
-            </div>
-            
-            <div class="grid-item clickable-img">
-                <img src="img/sites/segminas-site-flash.jpg" alt="Projeto 3">
-
-            </div>
-            
-            <div class="grid-item clickable-img">
-                <img src="img/sites/site-transagro.png" alt="Projeto 3">
-            </div>
-
-            <div class="grid-item clickable-img">
-                <img src="img/sites/soulfit-spa.png" alt="Projeto 3">
-            </div>
-
-
-            <div class="grid-item clickable-img">
-                <img src="img/sites/sitemassan-z-flash.jpg" alt="Projeto 3">
-            </div>
-
-            <div class="grid-item clickable-img">
-                <img src="img/sites/triggus.png" alt="Projeto 3">
-            </div>
-
-            <div class="grid-item clickable-img">
-                <img src="img/sites/tela-bloqueio-krug.png" alt="Projeto 3">
-            </div>
-
-            <div class="grid-item clickable-img">
-                <img src="img/sites/cervejaria-krug.png" alt="Projeto 3">
-            </div>
-
-            <div class="grid-item clickable-img">
-                <img src="img/sites/construtora-lider.png" alt="Projeto 3">
-            </div>
-
-        </section>
+        
     </main>
-
-    <div id="imageModal" class="modal">
-        <span class="close-btn">&times;</span>
-        <img class="modal-content" id="imgFull">
-    </div>
-
-    <script>
-        const modal = document.getElementById("imageModal");
-        const modalImg = document.getElementById("imgFull");
-
-        // Abrir modal
-        document.querySelectorAll('.clickable-img').forEach(item => {
-            item.addEventListener('click', function() {
-                const fullSrc = this.querySelector('img').src;
-                modal.style.display = "flex";
-                modalImg.src = fullSrc;
-                document.body.style.overflow = "hidden"; // Trava o scroll do fundo
-            });
-        });
-
-        // Fechar ao clicar em qualquer lugar
-        modal.onclick = function() {
-            modal.style.display = "none";
-            document.body.style.overflow = "auto"; // Libera o scroll
-        }
-    </script>
 </body>
 </html>
